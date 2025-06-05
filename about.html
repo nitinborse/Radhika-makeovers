@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Radhika Makeovers</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="header-placeholder"></div>
+
+  <section class="section">
+    <div class="about-wrapper">
+        <div class="about-image">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <!-- Front -->
+                <div class="flip-card-front">
+                  <img src="assests/Founder1.jpeg" alt="Radhika - Makeup Artist" />
+                </div>
+                <!-- Back -->
+                <div class="flip-card-back">
+                  <p>"Beauty begins the moment you decide to be yourself."</p>
+                  <div class="social-icons">
+                    <a href="https://www.instagram.com/radhikanitinborse?igsh=ZTkyYzBqbmxtM3hr" target="_blank" aria-label="Instagram">
+                      <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://facebook.com/yourprofile" target="_blank" aria-label="Facebook">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://wa.me/919284182410" target="_blank" aria-label="WhatsApp">
+                      <i class="fab fa-whatsapp"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+
+      <div class="about-content">
+        <h2>Hello, I'm Radhika ✨</h2>
+        <p>
+          With a brush in hand and a heart full of passion, I started <strong>Radhika Makeovers</strong> to help people feel confident, radiant, and beautiful in their own skin.
+        </p>
+        <p>
+          Over the past <strong>2+ years</strong>, I've had the honor of working with <em>hundreds of brides</em>, editorial models, and party-goers—each with a unique story and style.
+        </p>
+        <p>
+          I’m a <strong>certified makeup artist</strong> trained under India’s top stylists. My approach blends traditional Indian beauty with modern global techniques, focusing on enhancing your natural features.
+        </p>
+        <ul class="badges">
+          <li>💄 Certified Bridal & Editorial Expert</li>
+          <li>🏆 Over 300+ Happy Clients</li>
+          <li>🧼 Strict Hygiene Practices</li>
+          <li>🌟 Personalized Consultation & Trials</li>
+        </ul>
+        <p>
+          Whether it’s your big day or a bold photoshoot, I’m here to make you glow inside out.
+        </p>
+      </div>
+    </div>
+    <a
+  href="https://wa.me/919284182410?text=Hi,%20I%E2%80%99m%20interested%20in%20your%20makeup%20services%20for..."
+  class="whatsapp-float"
+  target="_blank"
+  rel="noopener"
+>
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <script>
+ // Header & Footer Load
+ fetch("header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header-placeholder").innerHTML = data;
+        const links = document.querySelectorAll("nav a");
+        links.forEach(link => {
+          if (link.href === location.href) link.classList.add("active");
+        });
+      });
+
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("footer-placeholder").innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>

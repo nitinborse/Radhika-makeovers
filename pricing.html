@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pricing & Packages - Radhika Makeovers</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans&display=swap" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+
+  <section class="section-title">Our Packages</section>
+
+  <section class="gallery-grid">
+    <div class="gallery-item">
+      <h3>Bridal Makeup</h3>
+      <p>Full-day bridal service including HD makeup, hair, and draping.</p>
+      <p><strong>₹12,000 - ₹25,000</strong></p>
+      <a href="javascript:void(0);" class="btn-cta" onclick="openPackageModal('bridal')">Get Quote</a>
+    </div>
+    <div class="gallery-item">
+      <h3>Engagement Look</h3>
+      <p>Natural glam for pre-wedding events with hair and styling.</p>
+      <p><strong>₹8,000 - ₹15,000</strong></p>
+      <a href="javascript:void(0);" class="btn-cta" onclick="openPackageModal('engagement')">Get Quote</a>
+    </div>
+    <div class="gallery-item">
+      <h3>Party Makeup</h3>
+      <p>Quick, fresh look for parties and corporate events.</p>
+      <p><strong>₹3,000 - ₹7,000</strong></p>
+      <a href="javascript:void(0);" class="btn-cta" onclick="openPackageModal('party')">Get Quote</a>
+    </div>
+  </section>
+
+  <section class="video-section" id="quote-form">
+    <h2 class="section-title">Download Our Full Brochure</h2>
+    
+      <a href="assests/RadhikaMakeovers.pdf" target="_blank" class="btn-cta" style="width: 100%; display: inline-block; text-align: center;">
+        Download Brochure</a>
+   
+
+  </section>
+  <a
+  href="https://wa.me/919284182410?text=Hi,%20I%E2%80%99m%20interested%20in%20your%20makeup%20services%20for..."
+  class="whatsapp-float"
+  target="_blank"
+  rel="noopener"
+>
+  <i class="fab fa-whatsapp"></i>
+</a>
+<div id="packageModal" class="modal-overlay">
+  <div class="modal-content">
+    <span class="close-btn2" onclick="closePackageModal()">&times;</span>
+    <h2 id="modal-title" class="modal-title">Makeup Package</h2>
+    <div id="modal-description" class="modal-description"></div>
+  </div>
+</div>
+
+<div id="footer-placeholder"></div>
+  <script>
+    fetch("header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header-placeholder").innerHTML = data;
+        const links = document.querySelectorAll("nav a");
+        links.forEach(link => {
+          if (link.href === location.href) link.classList.add("active");
+        });
+      });
+      fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    });
+
+    const packageDetails = {
+    bridal: {
+      title: "Bridal Makeup Package",
+      description: `
+        <p><strong>Price Range:</strong> ₹12,000 – ₹25,000</p>
+        <ul>
+          <li>Includes: HD Makeup, Hairstyle, Saree Draping</li>
+          <li>🎁 Add-ons INCLUDED:</li>
+          <li>• Hair Extension</li>
+          <li>• Lenses + Lashes</li>
+        </ul>
+        <p><strong>Perfect for your big day with full service coverage.</strong></p>
+      `
+    },
+    engagement: {
+      title: "Engagement Makeup Package",
+      description: `
+        <p><strong>Price Range:</strong> ₹8,000 – ₹15,000</p>
+        <ul>
+          <li>Includes: Soft Glam Makeup, Hair Styling, Dupatta Setting</li>
+          <li>🎁 Optional Add-ons:</li>
+          <li>• Lashes – ₹300</li>
+          <li>• Hair Accessories</li>
+        </ul>
+        <p><strong>Ideal for pre-wedding shoots and ceremonies.</strong></p>
+      `
+    },
+    party: {
+      title: "Party Makeup Package",
+      description: `
+        <p><strong>Price Range:</strong> ₹3,000 – ₹7,000</p>
+        <ul>
+          <li>Includes: Quick Makeup, Basic Hairstyling</li>
+          <li>🎁 Add-ons Available:</li>
+          <li>• Saree Draping – ₹250</li>
+          <li>• Hairstyle Upgrade – ₹300</li>
+        </ul>
+        <p><strong>Perfect for parties, receptions & corporate events.</strong></p>
+      `
+    }
+  };
+
+  function openPackageModal(type) {
+    const modal = document.getElementById("packageModal");
+    const title = document.getElementById("modal-title");
+    const description = document.getElementById("modal-description");
+
+    title.innerHTML = packageDetails[type].title;
+    description.innerHTML = packageDetails[type].description;
+    document.body.classList.add("modal-open");
+
+    modal.style.display = "flex";
+  }
+
+  function closePackageModal() {
+    document.getElementById("packageModal").style.display = "none";
+    document.body.classList.remove("modal-open");
+
+  }
+  </script>
+  
+</body>
+</html>

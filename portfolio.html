@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - Radhika Makeovers</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="header-placeholder"></div>
+
+  <!-- Main Content -->
+  <main class="portfolio-page">
+    <section class="section">
+      <h2 class="section-title">Our Makeup Portfolio</h2>
+
+      <!-- Tabs -->
+      <div class="gallery-tabs">
+        <button class="tab-button active">Bridal</button>
+        <button class="tab-button">Editorial</button>
+        <button class="tab-button">Party Looks</button>
+      </div>
+
+      <!-- Gallery -->
+      <div class="gallery-grid1">
+        <img src="assests/bridal.jpg" alt="Bridal Makeup" class="gallery-item1" />
+        <img src="assests/editorial.jpeg" alt="Editorial Look" class="gallery-item1" />
+        <img src="assests/party.jpeg" alt="Party Makeup" class="gallery-item1" />
+        <img src="assests/bridal2.jpeg" alt="Bridal Makeup" class="gallery-item1" />
+        <img src="assests/editorial2.jpeg" alt="Editorial Look" class="gallery-item1" />
+        <img src="assests/images.jpeg" alt="Party Makeup" class="gallery-item1" />
+      </div>
+    </section>
+
+    <section class="section before-after-section">
+      <h3 class="section-title">Before & After</h3>
+      <div class="slider-wrapper">
+        <div class="ba-container">
+          <div class="ba-img after-img">
+            <img src="assests/bridal.jpg" alt="After Makeup" />
+            <span class="label after-label">After</span>
+          </div>
+          <div class="ba-img ba-img--before before-img" style="width: 50%;">
+            <img src="assests/bridal2.jpeg" alt="Before Makeup" />
+            <span class="label before-label">Before</span>
+          </div>
+          <input type="range" min="0" max="100" value="50" class="ba-slider" aria-label="Before and After Slider"/>
+        </div>
+      </div>
+    </section>
+    <!-- Video Reels -->
+    <section class="section">
+      <h3 class="section-title">Watch Our Makeup Reels</h3>
+      <div class="video-section">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/KfG-5pGsUGQ?si=B1ISx3MhJksmWICB" frameborder="0" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/919284182410?text=Hi,%20I%E2%80%99m%20interested%20in%20your%20makeup%20services%20for..."
+       class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <!-- JavaScript -->
+  <script>
+    // Before/After Slider
+    const slider = document.querySelector('.ba-slider');
+    const beforeImg = document.querySelector('.ba-img--before');
+    slider.addEventListener('input', () => {
+      beforeImg.style.width = `${slider.value}%`;
+    });
+
+    // Header & Footer Load
+    fetch("header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header-placeholder").innerHTML = data;
+        const links = document.querySelectorAll("nav a");
+        links.forEach(link => {
+          if (link.href === location.href) link.classList.add("active");
+        });
+      });
+
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("footer-placeholder").innerHTML = data;
+      });
+
+      
+  </script>
+</body>
+</html>

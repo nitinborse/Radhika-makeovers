@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Radhika Makeovers</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap"
+    rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" href="assests/favicon.ico" type="image/x-icon" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <a href="index.html" class="logo-link">
+      <img src="assests/logo.png" alt="Radhika Makeovers Logo" class="site-logo2" />
+    </a>
+  </header>
+
+  <section class="hero fullscreen-video">
+    <video autoplay muted loop playsinline>
+      <source src="videoplayback.webm" type="video/webm" />
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+      <h1>Radhika Makeovers</h1>
+      <h2>Look Stunning. Feel Confident.</h2>
+      <p>Bridal, Party & Editorial Makeup — Crafted With Elegance.</p>
+
+      <div class="hero-buttons">
+        <a href="pricing.html" class="btn-cta">View Pricing</a>
+        <a href="assests/RadhikaMakeovers.pdf" target="_blank" class="btn-cta secondary">Brochure</a>
+        <a class="btn-cta" id="openFormBtn">Book Now</a>
+      </div>
+
+      <p class="hero-contact">
+        <i class="fas fa-phone-alt"></i>
+        <a href="tel:+919284182410">+91 9009064426</a>
+      </p>
+    </div>
+    <a href="https://wa.me/919284182410?text=Hi,%20I%E2%80%99m%20interested%20in%20your%20makeup%20services%20for..."
+      class="whatsapp-float" target="_blank" rel="noopener">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <div id="googleFormModal" class="form-popup">
+      <div class="form-content">
+        <span class="close-btn" id="closeFormBtn">&times;</span>
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLScVyG5G6zT1JBFh4WOIOquVh-Lbv_Amg1Z--r2pM9By7tSBIg/viewform?embedded=true"
+          width="640" height="959" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      </div>
+    </div>
+  </section>
+  
+  <script>
+    const openBtn = document.getElementById("openFormBtn");
+    const closeBtn = document.getElementById("closeFormBtn");
+    const modal = document.getElementById("googleFormModal");
+
+    openBtn.addEventListener("click", () => {
+      modal.style.display = "block";
+    });
+
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+  </script>
+
+</body>
+
+</html>
